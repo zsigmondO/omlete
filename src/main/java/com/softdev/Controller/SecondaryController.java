@@ -1,5 +1,6 @@
-package com.softdev;
+package com.softdev.Controller;
 
+import com.softdev.App;
 import javafx.fxml.FXML;
 
 import java.io.IOException;
@@ -7,7 +8,7 @@ import java.io.IOException;
 public class SecondaryController {
 
     @FXML
-    private void switchToPrimary() throws IOException {
+    public void switchToPrimary() throws IOException {
         App.setRoot("primary");
     }
 }
