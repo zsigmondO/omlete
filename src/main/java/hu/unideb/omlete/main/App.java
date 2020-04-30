@@ -19,7 +19,7 @@ public class App extends Application {
     @Override
     public void start(Stage stage){
         try {
-            scene = new Scene(loadFXML("primary"));
+            scene = new Scene(loadFXML("food_by_category"));
             scene.getStylesheets().add(App.class.getResource("/view/styles.css").toExternalForm());
             stage.setScene(scene);
             stage.show();

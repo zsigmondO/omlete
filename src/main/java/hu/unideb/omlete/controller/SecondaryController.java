@@ -10,7 +10,7 @@ public class SecondaryController {
 
     @FXML
     private void switchToPrimary() throws IOException {
-        App.setRoot("primary");
+        App.setRoot("food_by_category");
 
         System.out.println("valami in Secondary");
     }
