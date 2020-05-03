@@ -13,7 +13,7 @@ import java.util.List;
 
 public class PrimaryController {
 
-    FoodDAO foodDAO = new FoodDAOImpl();
+    private FoodDAO foodDAO = new FoodDAOImpl();
 
     @FXML
     private Button bakedDishButton;
