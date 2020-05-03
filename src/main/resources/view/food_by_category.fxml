@@ -33,7 +33,7 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Button id="styleBakedDishButton" fx:id="bakedDishButton" mnemonicParsing="false" prefHeight="80.0" prefWidth="80.0" stylesheets="@../style/baked_dish_format.css">
+                  <Button id="styleBakedDishButton" fx:id="bakedDishButton" mnemonicParsing="false" onAction="#pushBakedDishButton" prefHeight="80.0" prefWidth="80.0" stylesheets="@../style/baked_dish_format.css">
                      <graphic>
                         <ImageView fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
                            <image>
