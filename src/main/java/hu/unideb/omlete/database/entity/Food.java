@@ -3,7 +3,7 @@ package hu.unideb.omlete.database.entity;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Lob;
-import java.util.Arrays;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Food {
@@ -13,12 +13,22 @@ public class Food {
 
     private String name;
 
-    @Lob
-    private Byte[] image;
+    private String image;
 
     @Lob
     private String recipe;
 
+    @ManyToOne
+    private Category category;
+
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
+    }
 
     public Long getId() {
         return id;
@@ -36,11 +46,11 @@ public class Food {
         this.name = name;
     }
 
-    public Byte[] getImage() {
+    public String getImage() {
         return image;
     }
 
-    public void setImage(Byte[] image) {
+    public void setImage(String image) {
         this.image = image;
     }
 
@@ -58,7 +68,7 @@ public class Food {
         return "Food{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", image=" + Arrays.toString(image) +
+                ", image=" + image +
                 ", recipe='" + recipe + '\'' +
                 '}';
     }

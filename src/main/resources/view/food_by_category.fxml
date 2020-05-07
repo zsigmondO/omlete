@@ -115,6 +115,7 @@
                   </Button>
                </children>
             </GridPane>
+            <AnchorPane fx:id="paneOfImageViews" layoutX="120.0" layoutY="10.0" prefHeight="883.0" prefWidth="1032.0" />
          </children>
       </AnchorPane>
    </children>

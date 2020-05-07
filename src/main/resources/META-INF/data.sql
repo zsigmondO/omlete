@@ -8,6 +8,6 @@ INSERT INTO Category (id, name) VALUES (7,'kid_friendly');
 INSERT INTO Category (id, name) VALUES (8,'quick');
 INSERT INTO Category (id, name) VALUES (9,'vegetables');
 
-
-INSERT INTO Food (id, name, image, recipe) VALUES (1,'name',RAWTOHEX('Test'),'Tesztelő szöveg. Itt lesz a recept');
-INSERT INTO Food (id, name, image, recipe) VALUES (2,'name2',RAWTOHEX('Test2'),'Tesztelő szöveg kettes! Itt lesz a recept');
+INSERT INTO Food (id, name, image, recipe, category_id) VALUES (1,'name','1.jpg','Tesztelő szöveg. Itt lesz a recept', 1);
+INSERT INTO Food (id, name, image, recipe, category_id) VALUES (2,'name2','1.jpg','Tesztelő szöveg kettes! Itt lesz a recept', 2);
+INSERT INTO Food (id, name, image, recipe, category_id) VALUES (3,'name3','1.jpg','Tesztelő szöveg harmas! Itt lesz a recept', 1);

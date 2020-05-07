@@ -13,7 +13,7 @@ public class FoodDAOImpl implements FoodDAO {
 
     @Override
     public List<Food> findAllByCategoryId(Long id) {
-        TypedQuery<Food> typedQuery = em.createQuery("SELECT f FROM Food f WHERE f.id = :id", Food.class);
+        TypedQuery<Food> typedQuery = em.createQuery("SELECT f FROM Food f WHERE f.category.id = :id", Food.class);
         typedQuery.setParameter("id", id);
 
         System.out.println("Printing by id: " + id);

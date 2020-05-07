@@ -1,0 +1,2 @@
+DROP TABLE Food;
+DROP TABLE Category;
