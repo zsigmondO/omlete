@@ -1,0 +1,6 @@
+.parent{
+    -fx-background-image:url(piros.jpg);
+    -fx-background-position:center;
+    -fx-background-repeat:no-repeat;
+    -fx-background-size:600 600;
+}
