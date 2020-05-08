@@ -3,7 +3,6 @@ package hu.unideb.omlete.controller;
 import hu.unideb.omlete.database.dao.FoodDAO;
 import hu.unideb.omlete.database.dao.impl.FoodDAOImpl;
 import hu.unideb.omlete.database.entity.Food;
-import hu.unideb.omlete.main.App;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -11,35 +10,69 @@ import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.GridPane;
 
-import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class PrimaryController {
 
     private FoodDAO foodDAO = new FoodDAOImpl();
 
     @FXML
-    private AnchorPane paneOfImageViews;
+    private Button quickButton;
 
+    @FXML
+    private Button chickenButton;
+
+    @FXML
+    private Button dinnerButton;
+
+    @FXML
+    private Button vegetablesButton;
+
+    @FXML
+    private Button beefButton;
+
+    @FXML
+    private Button kidFriendlyButton;
+
+    @FXML
+    private Button easyButton;
+
+    @FXML
+    private Button healthyButton;
 
     @FXML
     private Button bakedDishButton;
 
     @FXML
-    private void switchToSecondary() throws IOException {
-        App.setRoot("secondary");
+    private GridPane paneOfImages = new GridPane();
 
-        System.out.println("Valami in Primary");
+    void insertImageToPane(List<ImageView> imageViews)
+    {
+        AtomicInteger row = new AtomicInteger();
+        AtomicInteger column = new AtomicInteger();
+
+        imageViews.forEach(imageView -> {
+            if (column.equals(1)) {
+                row.getAndIncrement();
+                column.set(0);
+            }
+
+            paneOfImages.add(imageView, Integer.parseInt(column.toString()), Integer.parseInt(row.toString()));
+            column.getAndIncrement();
+        });
     }
 
     @FXML
     void pushBakedDishButton(ActionEvent event) {
         List<Food> foods = foodDAO.findAllByCategoryId((long) 1);
         List<ImageView> imageViews = new ArrayList<>();
+        paneOfImages.setHgap(10);
+        paneOfImages.setVgap(10);
 
         foods.forEach(food -> {
             URL url = getClass().getResource("/images/food/" + food.getImage());
@@ -53,10 +86,46 @@ public class PrimaryController {
             });
             imageViews.add(imageView);
         });
-        paneOfImageViews = new AnchorPane();
-        paneOfImageViews.getChildren().addAll(imageViews);
-        System.out.println(foods);
+        insertImageToPane(imageViews);
+    }
 
-        System.out.println("Szép volt báttya! :)");
+    @FXML
+    void pushBeefButton(ActionEvent event) {
+
+    }
+
+    @FXML
+    void pushChickenButton(ActionEvent event) {
+
+    }
+
+    @FXML
+    void pushDinnerButton(ActionEvent event) {
+
+    }
+
+    @FXML
+    void pushEasyButton(ActionEvent event) {
+
+    }
+
+    @FXML
+    void pushHealthyButton(ActionEvent event) {
+
+    }
+
+    @FXML
+    void pushKidFriendlyButton(ActionEvent event) {
+
+    }
+
+    @FXML
+    void pushQuickButton(ActionEvent event) {
+
+    }
+
+    @FXML
+    void pushVegetablesButton(ActionEvent event) {
+
     }
 }
