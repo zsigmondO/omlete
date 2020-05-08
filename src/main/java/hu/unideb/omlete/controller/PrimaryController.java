@@ -51,8 +51,7 @@ public class PrimaryController {
     @FXML
     private GridPane paneOfImages = new GridPane();
 
-    void insertImageToPane(List<ImageView> imageViews)
-    {
+    void insertImageToPane(List<ImageView> imageViews) {
         AtomicInteger row = new AtomicInteger();
         AtomicInteger column = new AtomicInteger();
 
@@ -67,13 +66,7 @@ public class PrimaryController {
         });
     }
 
-    @FXML
-    void pushBakedDishButton(ActionEvent event) {
-        List<Food> foods = foodDAO.findAllByCategoryId((long) 1);
-        List<ImageView> imageViews = new ArrayList<>();
-        paneOfImages.setHgap(10);
-        paneOfImages.setVgap(10);
-
+    void getListOfImageViews(List<Food> foods, List<ImageView> imageViews) {
         foods.forEach(food -> {
             URL url = getClass().getResource("/images/food/" + food.getImage());
             Image image = new Image(url.toString());
@@ -86,22 +79,62 @@ public class PrimaryController {
             });
             imageViews.add(imageView);
         });
+    }
+
+    @FXML
+    void pushBakedDishButton(ActionEvent event) {
+        paneOfImages.getChildren().clear();
+
+        List<Food> foods = foodDAO.findAllByCategoryId((long) 1);
+        List<ImageView> imageViews = new ArrayList<>();
+
+        paneOfImages.setHgap(10);
+        paneOfImages.setVgap(10);
+
+        getListOfImageViews(foods, imageViews);
         insertImageToPane(imageViews);
     }
 
     @FXML
     void pushBeefButton(ActionEvent event) {
+        paneOfImages.getChildren().clear();
 
+        List<Food> foods = foodDAO.findAllByCategoryId((long) 2);
+        List<ImageView> imageViews = new ArrayList<>();
+
+        paneOfImages.setHgap(10);
+        paneOfImages.setVgap(10);
+
+        getListOfImageViews(foods, imageViews);
+        insertImageToPane(imageViews);
     }
 
     @FXML
     void pushChickenButton(ActionEvent event) {
+        paneOfImages.getChildren().clear();
 
+        List<Food> foods = foodDAO.findAllByCategoryId((long) 3);
+        List<ImageView> imageViews = new ArrayList<>();
+
+        paneOfImages.setHgap(10);
+        paneOfImages.setVgap(10);
+
+        getListOfImageViews(foods, imageViews);
+        insertImageToPane(imageViews);
     }
 
     @FXML
     void pushDinnerButton(ActionEvent event) {
+        paneOfImages.getChildren().clear();
 
+        List<Food> foods = foodDAO.findAllByCategoryId((long) 4);
+        List<ImageView> imageViews = new ArrayList<>();
+
+        paneOfImages.setHgap(10);
+        paneOfImages.setVgap(10);
+
+        getListOfImageViews(foods, imageViews);
+        insertImageToPane(imageViews);
     }
 
     @FXML
