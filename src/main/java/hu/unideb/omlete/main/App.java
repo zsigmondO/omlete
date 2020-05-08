@@ -22,10 +22,19 @@ public class App extends Application {
             scene = new Scene(loadFXML("welcome"));
             scene.getStylesheets().add(App.class.getResource("/view/styles.css").toExternalForm());
             stage.setScene(scene);
+            stage.setResizable(false);
             stage.show();
         } catch (Exception e) {
             System.out.println("Ez van: " + e.getCause());
         }
+    }
+
+    public static Scene getScene() {
+        return scene;
+    }
+
+    public static void setScene(Scene scene) {
+        App.scene = scene;
     }
 
     public static void setRoot(String fxml) throws IOException {
@@ -33,8 +42,6 @@ public class App extends Application {
     }
 
     private static Parent loadFXML(String fxml) throws IOException {
-        //FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("view/" + fxml + ".fxml"));
-        //return fxmlLoader.load();
         return FXMLLoader.load(Objects.requireNonNull(App.class.getClassLoader().getResource("view/" + fxml + ".fxml")));
     }
 

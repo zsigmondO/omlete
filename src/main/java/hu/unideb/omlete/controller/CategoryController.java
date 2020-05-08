@@ -22,33 +22,6 @@ public class CategoryController {
     private FoodDAO foodDAO = new FoodDAOImpl();
 
     @FXML
-    private Button quickButton;
-
-    @FXML
-    private Button chickenButton;
-
-    @FXML
-    private Button dinnerButton;
-
-    @FXML
-    private Button vegetablesButton;
-
-    @FXML
-    private Button beefButton;
-
-    @FXML
-    private Button kidFriendlyButton;
-
-    @FXML
-    private Button easyButton;
-
-    @FXML
-    private Button healthyButton;
-
-    @FXML
-    private Button bakedDishButton;
-
-    @FXML
     private GridPane paneOfImages = new GridPane();
 
     void insertImageToPane(List<ImageView> imageViews) {
