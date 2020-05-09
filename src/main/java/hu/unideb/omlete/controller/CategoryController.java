@@ -10,6 +10,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
+import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
 
 import java.net.URL;
@@ -29,7 +30,6 @@ public class CategoryController {
 
     void insertImageToPane(List<ImageView> imageViews) {
         AtomicInteger index = new AtomicInteger();
-
         imageViews.forEach(imageView -> {
             paneOfImages.add(imageView, 0, Integer.parseInt(index.toString()));
             index.getAndIncrement();
@@ -41,6 +41,10 @@ public class CategoryController {
             URL url = getClass().getResource("/images/food/" + food.getImage());
             Image image = new Image(url.toString());
             ImageView imageView = new ImageView(image);
+            imageView.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
+                Text t1 = new Text(food.getRecipe());
+                recipeField.getChildren().add(t1);
+            });
             imageView.setOnMouseClicked(new EventHandler<MouseEvent>() {
                 @Override
                 public void handle(MouseEvent mouseEvent) {
@@ -54,6 +58,7 @@ public class CategoryController {
     @FXML
     void pushBakedDishButton(ActionEvent event) {
         paneOfImages.getChildren().clear();
+        recipeField.getChildren().clear();
 
         List<Food> foods = foodDAO.findAllByCategoryId((long) 1);
         List<ImageView> imageViews = new ArrayList<>();
@@ -68,6 +73,7 @@ public class CategoryController {
     @FXML
     void pushBeefButton(ActionEvent event) {
         paneOfImages.getChildren().clear();
+        recipeField.getChildren().clear();
 
         List<Food> foods = foodDAO.findAllByCategoryId((long) 2);
         List<ImageView> imageViews = new ArrayList<>();
@@ -82,6 +88,7 @@ public class CategoryController {
     @FXML
     void pushChickenButton(ActionEvent event) {
         paneOfImages.getChildren().clear();
+        recipeField.getChildren().clear();
 
         List<Food> foods = foodDAO.findAllByCategoryId((long) 3);
         List<ImageView> imageViews = new ArrayList<>();
@@ -96,6 +103,7 @@ public class CategoryController {
     @FXML
     void pushDinnerButton(ActionEvent event) {
         paneOfImages.getChildren().clear();
+        recipeField.getChildren().clear();
 
         List<Food> foods = foodDAO.findAllByCategoryId((long) 4);
         List<ImageView> imageViews = new ArrayList<>();
@@ -110,6 +118,7 @@ public class CategoryController {
     @FXML
     void pushEasyButton(ActionEvent event) {
         paneOfImages.getChildren().clear();
+        recipeField.getChildren().clear();
 
         List<Food> foods = foodDAO.findAllByCategoryId((long) 5);
         List<ImageView> imageViews = new ArrayList<>();
@@ -124,6 +133,7 @@ public class CategoryController {
     @FXML
     void pushHealthyButton(ActionEvent event) {
         paneOfImages.getChildren().clear();
+        recipeField.getChildren().clear();
 
         List<Food> foods = foodDAO.findAllByCategoryId((long) 6);
         List<ImageView> imageViews = new ArrayList<>();
@@ -138,6 +148,7 @@ public class CategoryController {
     @FXML
     void pushKidFriendlyButton(ActionEvent event) {
         paneOfImages.getChildren().clear();
+        recipeField.getChildren().clear();
 
         List<Food> foods = foodDAO.findAllByCategoryId((long) 7);
         List<ImageView> imageViews = new ArrayList<>();
@@ -152,6 +163,7 @@ public class CategoryController {
     @FXML
     void pushQuickButton(ActionEvent event) {
         paneOfImages.getChildren().clear();
+        recipeField.getChildren().clear();
 
         List<Food> foods = foodDAO.findAllByCategoryId((long) 8);
         List<ImageView> imageViews = new ArrayList<>();
@@ -166,6 +178,7 @@ public class CategoryController {
     @FXML
     void pushVegetablesButton(ActionEvent event) {
         paneOfImages.getChildren().clear();
+        recipeField.getChildren().clear();
 
         List<Food> foods = foodDAO.findAllByCategoryId((long) 9);
         List<ImageView> imageViews = new ArrayList<>();
