@@ -1,18 +1,8 @@
-.mainWindow{
+.mainWindow {
+    -fx-background-image:url(background_welcome.jpg);
     -fx-background-position:center;
     -fx-background-repeat:no-repeat;
-    -fx-background-size:600 600;
-}
-
-.welcomeButton {
-    -fx-background-color: linear-gradient(#990011FF,#be1d00);
-    -fx-background-radius: 30;
-    -fx-background-insets: 0;
-    -fx-background-insets: 0,1;
-    -fx-text-fill: #FCF6F5FF;
-    -fx-effect: dropshadow( one-pass-box , black , 8 , 0.0 , 2 , 0 );
-    -fx-font-weight: bold;
-    -fx-font-size: 20;
+    -fx-background-size:1300 1000;
 }
 
 .welcomeLabel {
@@ -21,4 +11,14 @@
     -fx-stroke: firebrick;
     -fx-stroke-width: 1px;
     -fx-effect: dropshadow( one-pass-box , black , 8 , 0.0 , 2 , 0 );
+}
+
+.welcomeButton {
+    -fx-background-radius: 30;
+    -fx-background-insets: 0;
+    -fx-background-insets: 0,1;
+    -fx-text-fill: #990011FF;
+    -fx-effect: dropshadow( one-pass-box , black , 8 , 0.0 , 2 , 0 );
+    -fx-font-weight: bold;
+    -fx-font-size: 20;
 }

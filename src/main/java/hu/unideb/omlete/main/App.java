@@ -9,27 +9,9 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.util.Objects;
 
-/**
- * JavaFX App
- */
 public class App extends Application {
 
     private static Scene scene;
-
-
-    @Override
-    public void start(Stage stage){
-        try {
-            scene = new Scene(loadFXML("welcome"));
-            scene.getStylesheets().add(App.class.getResource("/style/styles.css").toExternalForm());
-            stage.setScene(scene);
-            stage.setResizable(false);
-            stage.show();
-        } catch (Exception e) {
-            System.out.println("Ez van: " + e.getCause());
-        }
-    }
-
 
     public static void setRoot(String fxml) throws IOException {
         scene.setRoot(loadFXML(fxml));
@@ -43,4 +25,16 @@ public class App extends Application {
         launch(args);
     }
 
+    @Override
+    public void start(Stage stage) {
+        try {
+            scene = new Scene(loadFXML("welcome"));
+            stage.setScene(scene);
+            stage.setTitle("omlete");
+            stage.setResizable(false);
+            stage.show();
+        } catch (Exception e) {
+            System.out.println(" " + e.getCause());
+        }
+    }
 }

@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.TextFlow?>
 
-<VBox alignment="BOTTOM_CENTER" minHeight="943.0" minWidth="1201.0" spacing="20.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.unideb.omlete.controller.CategoryController">
+<VBox alignment="BOTTOM_CENTER" prefHeight="1000.0" prefWidth="1300.0" spacing="20.0" styleClass="mainWindow" stylesheets="@../style/food_by_category.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.unideb.omlete.controller.CategoryController">
    <padding>
       <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
    </padding>
@@ -35,7 +35,7 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Button id="styleBakedDishButton" fx:id="bakedDishButton" graphicTextGap="0.0" mnemonicParsing="false" onAction="#pushBakedDishButton" prefHeight="80.0" prefWidth="80.0" styleClass="styleBakedDishButton" stylesheets="@../style/baked_dish_format.css">
+                  <Button id="styleBakedDishButton" fx:id="bakedDishButton" graphicTextGap="0.0" mnemonicParsing="false" onAction="#pushBakedDishButton" prefHeight="80.0" prefWidth="80.0" styleClass="styleBakedDishButton">
                      <graphic>
                         <ImageView fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -117,17 +117,21 @@
                   </Button>
                </children>
             </GridPane>
-            <GridPane fx:id="paneOfImages" layoutX="142.0" layoutY="21.0" prefHeight="860.0" prefWidth="268.0">
-              <columnConstraints>
-                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-              </columnConstraints>
-              <rowConstraints>
-                <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
-              </rowConstraints>
-            </GridPane>
-            <ScrollPane layoutX="440.0" layoutY="21.0">
+            <ScrollPane focusTraversable="false" layoutX="234.0" layoutY="21.0" opacity="0.9">
+               <content>
+                  <GridPane fx:id="paneOfImages" prefHeight="952.0" prefWidth="257.0">
+                    <columnConstraints>
+                      <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                  </GridPane>
+               </content>
+            </ScrollPane>
+            <ScrollPane focusTraversable="false" layoutX="525.0" layoutY="21.0" opacity="0.9" prefHeight="959.0" prefWidth="761.0">
                <content>
                   <TextFlow fx:id="recipeField" prefHeight="869.0" prefWidth="705.0" />
                </content>

@@ -2,7 +2,6 @@ package hu.unideb.omlete.database.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 
 @Entity

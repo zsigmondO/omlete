@@ -4,7 +4,6 @@ import com.google.common.io.Resources;
 import hu.unideb.omlete.database.entity.Food;
 import hu.unideb.omlete.service.FoodService;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Tooltip;
 import javafx.scene.image.Image;
@@ -31,7 +30,7 @@ public class CategoryController {
     @FXML
     private TextFlow recipeField = new TextFlow();
 
-    void insertImageToPane(List<ImageView> imageViews) {
+    private void insertImageToPane(List<ImageView> imageViews) {
         AtomicInteger index = new AtomicInteger();
         imageViews.forEach(imageView -> {
             paneOfImages.add(imageView, 0, Integer.parseInt(index.toString()));
@@ -39,7 +38,7 @@ public class CategoryController {
         });
     }
 
-    void getListOfImageViews(List<Food> foods, List<ImageView> imageViews) {
+    private void getListOfImageViews(List<Food> foods, List<ImageView> imageViews) {
         foods.forEach(food -> {
             URL url = getClass().getResource("/images/food/" + food.getImage());
             Image image = new Image(url.toString());
@@ -47,13 +46,13 @@ public class CategoryController {
 
             Tooltip.install(imageView, new Tooltip(food.getName()));
 
-            getRecipe(food,url, imageView);
+            getRecipe(food, url, imageView);
 
             imageViews.add(imageView);
         });
     }
 
-    void getRecipe() {
+    private void getRecipe(Food food, URL url, ImageView imageView) {
         url = Resources.getResource("recipe" + food.getRecipe());
 
         String text = null;

@@ -4,7 +4,8 @@ import hu.unideb.omlete.database.EmfHelper;
 import hu.unideb.omlete.database.dao.FoodDAO;
 import hu.unideb.omlete.database.entity.Food;
 
-import javax.persistence.*;
+import javax.persistence.EntityManager;
+import javax.persistence.TypedQuery;
 import java.util.List;
 
 public class FoodDAOImpl implements FoodDAO {

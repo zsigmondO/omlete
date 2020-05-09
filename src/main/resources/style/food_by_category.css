@@ -1,0 +1,6 @@
+.mainWindow {
+    -fx-background-image:url(background_food_by_category.jpg);
+    -fx-background-position:center;
+    -fx-background-repeat:no-repeat;
+    -fx-background-size:1340 1040;
+}
