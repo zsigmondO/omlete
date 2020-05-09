@@ -7,9 +7,8 @@
 
 <VBox alignment="CENTER" prefHeight="943.0" prefWidth="1201.0" spacing="20.0" stylesheets="@../style/welcome.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.unideb.omlete.controller.WelcomeController">
     <children>
-        <Label text="Itt épp építkezés zajlik." />
-        <Button fx:id="categoryButton" onAction="#switchToCategory" text="Megnézem a recepteket kategória szerint" />
-      <Button fx:id="createShoppingList" onAction="#switchToShoppingList" text="Bevásárlólistát csinálok" />
+        <Label stylesheets="@styles.css" text="Üdvözöljük az omlete konyhai alkalmazásban!" />
+        <Button fx:id="categoryButton" onAction="#switchToCategory" text="Megtekint" />
     </children>
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />

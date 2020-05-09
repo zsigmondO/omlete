@@ -6,11 +6,11 @@ import hu.unideb.omlete.database.entity.Food;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
+import javafx.scene.text.TextFlow;
 
 import java.net.URL;
 import java.util.ArrayList;
@@ -24,18 +24,15 @@ public class CategoryController {
     @FXML
     private GridPane paneOfImages = new GridPane();
 
+    @FXML
+    private TextFlow recipeField = new TextFlow();
+
     void insertImageToPane(List<ImageView> imageViews) {
-        AtomicInteger row = new AtomicInteger();
-        AtomicInteger column = new AtomicInteger();
+        AtomicInteger index = new AtomicInteger();
 
         imageViews.forEach(imageView -> {
-            if (column.equals(1)) {
-                row.getAndIncrement();
-                column.set(0);
-            }
-
-            paneOfImages.add(imageView, Integer.parseInt(column.toString()), Integer.parseInt(row.toString()));
-            column.getAndIncrement();
+            paneOfImages.add(imageView, 0, Integer.parseInt(index.toString()));
+            index.getAndIncrement();
         });
     }
 
@@ -112,26 +109,71 @@ public class CategoryController {
 
     @FXML
     void pushEasyButton(ActionEvent event) {
+        paneOfImages.getChildren().clear();
 
+        List<Food> foods = foodDAO.findAllByCategoryId((long) 5);
+        List<ImageView> imageViews = new ArrayList<>();
+
+        paneOfImages.setHgap(10);
+        paneOfImages.setVgap(10);
+
+        getListOfImageViews(foods, imageViews);
+        insertImageToPane(imageViews);
     }
 
     @FXML
     void pushHealthyButton(ActionEvent event) {
+        paneOfImages.getChildren().clear();
 
+        List<Food> foods = foodDAO.findAllByCategoryId((long) 6);
+        List<ImageView> imageViews = new ArrayList<>();
+
+        paneOfImages.setHgap(10);
+        paneOfImages.setVgap(10);
+
+        getListOfImageViews(foods, imageViews);
+        insertImageToPane(imageViews);
     }
 
     @FXML
     void pushKidFriendlyButton(ActionEvent event) {
+        paneOfImages.getChildren().clear();
 
+        List<Food> foods = foodDAO.findAllByCategoryId((long) 7);
+        List<ImageView> imageViews = new ArrayList<>();
+
+        paneOfImages.setHgap(10);
+        paneOfImages.setVgap(10);
+
+        getListOfImageViews(foods, imageViews);
+        insertImageToPane(imageViews);
     }
 
     @FXML
     void pushQuickButton(ActionEvent event) {
+        paneOfImages.getChildren().clear();
 
+        List<Food> foods = foodDAO.findAllByCategoryId((long) 8);
+        List<ImageView> imageViews = new ArrayList<>();
+
+        paneOfImages.setHgap(10);
+        paneOfImages.setVgap(10);
+
+        getListOfImageViews(foods, imageViews);
+        insertImageToPane(imageViews);
     }
 
     @FXML
     void pushVegetablesButton(ActionEvent event) {
+        paneOfImages.getChildren().clear();
 
+        List<Food> foods = foodDAO.findAllByCategoryId((long) 9);
+        List<ImageView> imageViews = new ArrayList<>();
+
+        paneOfImages.setHgap(10);
+        paneOfImages.setVgap(10);
+
+        getListOfImageViews(foods, imageViews);
+        insertImageToPane(imageViews);
     }
 }
