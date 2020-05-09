@@ -47,30 +47,31 @@ public class CategoryController {
 
             Tooltip.install(imageView, new Tooltip(food.getName()));
 
-            url = Resources.getResource("recipe" + food.getRecipe());
-            String text = null;
-
-            try {
-                text = Resources.toString(url, StandardCharsets.UTF_8);
-
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-
-            String finalText = text;
-
-            imageView.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
-                recipeField.getChildren().clear();
-                Text t1 = new Text(finalText);
-                recipeField.getChildren().add(t1);
-            });
+            getRecipe(food,url, imageView);
 
             imageViews.add(imageView);
         });
     }
 
     void getRecipe() {
+        url = Resources.getResource("recipe" + food.getRecipe());
 
+        String text = null;
+
+        try {
+            text = Resources.toString(url, StandardCharsets.UTF_8);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        String finalText = text;
+
+        imageView.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
+            recipeField.getChildren().clear();
+            Text t1 = new Text(finalText);
+            recipeField.getChildren().add(t1);
+        });
     }
 
     @FXML
