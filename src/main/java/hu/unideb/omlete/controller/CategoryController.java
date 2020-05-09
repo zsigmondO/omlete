@@ -6,6 +6,7 @@ import hu.unideb.omlete.database.entity.Food;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.scene.control.Tooltip;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -41,16 +42,20 @@ public class CategoryController {
             URL url = getClass().getResource("/images/food/" + food.getImage());
             Image image = new Image(url.toString());
             ImageView imageView = new ImageView(image);
+
             imageView.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
+                recipeField.getChildren().clear();
                 Text t1 = new Text(food.getRecipe());
                 recipeField.getChildren().add(t1);
             });
+
             imageView.setOnMouseClicked(new EventHandler<MouseEvent>() {
                 @Override
                 public void handle(MouseEvent mouseEvent) {
                     System.out.println("Szia! " + food.getId() + " ez az ájdi!");
                 }
             });
+
             imageViews.add(imageView);
         });
     }
