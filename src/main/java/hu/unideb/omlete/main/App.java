@@ -16,11 +16,12 @@ public class App extends Application {
 
     private static Scene scene;
 
+
     @Override
     public void start(Stage stage){
         try {
             scene = new Scene(loadFXML("welcome"));
-            scene.getStylesheets().add(App.class.getResource("/view/styles.css").toExternalForm());
+            scene.getStylesheets().add(App.class.getResource("/style/styles.css").toExternalForm());
             stage.setScene(scene);
             stage.setResizable(false);
             stage.show();
@@ -29,13 +30,6 @@ public class App extends Application {
         }
     }
 
-    public static Scene getScene() {
-        return scene;
-    }
-
-    public static void setScene(Scene scene) {
-        App.scene = scene;
-    }
 
     public static void setRoot(String fxml) throws IOException {
         scene.setRoot(loadFXML(fxml));

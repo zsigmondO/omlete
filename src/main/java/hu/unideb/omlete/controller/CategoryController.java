@@ -1,8 +1,8 @@
 package hu.unideb.omlete.controller;
 
-import hu.unideb.omlete.database.dao.FoodDAO;
-import hu.unideb.omlete.database.dao.impl.FoodDAOImpl;
+import com.google.common.io.Resources;
 import hu.unideb.omlete.database.entity.Food;
+import hu.unideb.omlete.service.FoodService;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -14,14 +14,16 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
 
+import java.io.IOException;
 import java.net.URL;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class CategoryController {
 
-    private FoodDAO foodDAO = new FoodDAOImpl();
+    private FoodService foodService = new FoodService();
 
     @FXML
     private GridPane paneOfImages = new GridPane();
@@ -45,21 +47,30 @@ public class CategoryController {
 
             Tooltip.install(imageView, new Tooltip(food.getName()));
 
+            url = Resources.getResource("recipe" + food.getRecipe());
+            String text = null;
+
+            try {
+                text = Resources.toString(url, StandardCharsets.UTF_8);
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            String finalText = text;
+
             imageView.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
                 recipeField.getChildren().clear();
-                Text t1 = new Text(food.getRecipe());
+                Text t1 = new Text(finalText);
                 recipeField.getChildren().add(t1);
-            });
-
-            imageView.setOnMouseClicked(new EventHandler<MouseEvent>() {
-                @Override
-                public void handle(MouseEvent mouseEvent) {
-                    System.out.println("Szia! " + food.getId() + " ez az ájdi!");
-                }
             });
 
             imageViews.add(imageView);
         });
+    }
+
+    void getRecipe() {
+
     }
 
     @FXML
@@ -67,7 +78,7 @@ public class CategoryController {
         paneOfImages.getChildren().clear();
         recipeField.getChildren().clear();
 
-        List<Food> foods = foodDAO.findAllByCategoryId((long) 1);
+        List<Food> foods = foodService.findAllByCategoryId((long) 1);
         List<ImageView> imageViews = new ArrayList<>();
 
         paneOfImages.setHgap(10);
@@ -82,7 +93,7 @@ public class CategoryController {
         paneOfImages.getChildren().clear();
         recipeField.getChildren().clear();
 
-        List<Food> foods = foodDAO.findAllByCategoryId((long) 2);
+        List<Food> foods = foodService.findAllByCategoryId((long) 2);
         List<ImageView> imageViews = new ArrayList<>();
 
         paneOfImages.setHgap(10);
@@ -97,7 +108,7 @@ public class CategoryController {
         paneOfImages.getChildren().clear();
         recipeField.getChildren().clear();
 
-        List<Food> foods = foodDAO.findAllByCategoryId((long) 3);
+        List<Food> foods = foodService.findAllByCategoryId((long) 3);
         List<ImageView> imageViews = new ArrayList<>();
 
         paneOfImages.setHgap(10);
@@ -112,7 +123,7 @@ public class CategoryController {
         paneOfImages.getChildren().clear();
         recipeField.getChildren().clear();
 
-        List<Food> foods = foodDAO.findAllByCategoryId((long) 4);
+        List<Food> foods = foodService.findAllByCategoryId((long) 4);
         List<ImageView> imageViews = new ArrayList<>();
 
         paneOfImages.setHgap(10);
@@ -127,7 +138,7 @@ public class CategoryController {
         paneOfImages.getChildren().clear();
         recipeField.getChildren().clear();
 
-        List<Food> foods = foodDAO.findAllByCategoryId((long) 5);
+        List<Food> foods = foodService.findAllByCategoryId((long) 5);
         List<ImageView> imageViews = new ArrayList<>();
 
         paneOfImages.setHgap(10);
@@ -142,7 +153,7 @@ public class CategoryController {
         paneOfImages.getChildren().clear();
         recipeField.getChildren().clear();
 
-        List<Food> foods = foodDAO.findAllByCategoryId((long) 6);
+        List<Food> foods = foodService.findAllByCategoryId((long) 6);
         List<ImageView> imageViews = new ArrayList<>();
 
         paneOfImages.setHgap(10);
@@ -157,7 +168,7 @@ public class CategoryController {
         paneOfImages.getChildren().clear();
         recipeField.getChildren().clear();
 
-        List<Food> foods = foodDAO.findAllByCategoryId((long) 7);
+        List<Food> foods = foodService.findAllByCategoryId((long) 7);
         List<ImageView> imageViews = new ArrayList<>();
 
         paneOfImages.setHgap(10);
@@ -172,7 +183,7 @@ public class CategoryController {
         paneOfImages.getChildren().clear();
         recipeField.getChildren().clear();
 
-        List<Food> foods = foodDAO.findAllByCategoryId((long) 8);
+        List<Food> foods = foodService.findAllByCategoryId((long) 8);
         List<ImageView> imageViews = new ArrayList<>();
 
         paneOfImages.setHgap(10);
@@ -187,7 +198,7 @@ public class CategoryController {
         paneOfImages.getChildren().clear();
         recipeField.getChildren().clear();
 
-        List<Food> foods = foodDAO.findAllByCategoryId((long) 9);
+        List<Food> foods = foodService.findAllByCategoryId((long) 9);
         List<ImageView> imageViews = new ArrayList<>();
 
         paneOfImages.setHgap(10);

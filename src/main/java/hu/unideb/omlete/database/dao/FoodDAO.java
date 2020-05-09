@@ -5,5 +5,6 @@ import hu.unideb.omlete.database.entity.Food;
 import java.util.List;
 
 public interface FoodDAO {
+
     List<Food> findAllByCategoryId(Long id);
 }

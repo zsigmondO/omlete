@@ -15,7 +15,6 @@ public class Food {
 
     private String image;
 
-    @Lob
     private String recipe;
 
     @ManyToOne

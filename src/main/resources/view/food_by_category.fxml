@@ -2,6 +2,7 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -11,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.TextFlow?>
 
-<VBox alignment="BOTTOM_CENTER" prefHeight="943.0" prefWidth="1201.0" spacing="20.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.unideb.omlete.controller.CategoryController">
+<VBox alignment="BOTTOM_CENTER" minHeight="943.0" minWidth="1201.0" spacing="20.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.unideb.omlete.controller.CategoryController">
    <padding>
       <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
    </padding>
@@ -34,7 +35,7 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Button id="styleBakedDishButton" fx:id="bakedDishButton" graphicTextGap="0.0" mnemonicParsing="false" onAction="#pushBakedDishButton" prefHeight="80.0" prefWidth="80.0" stylesheets="@../style/baked_dish_format.css">
+                  <Button id="styleBakedDishButton" fx:id="bakedDishButton" graphicTextGap="0.0" mnemonicParsing="false" onAction="#pushBakedDishButton" prefHeight="80.0" prefWidth="80.0" styleClass="styleBakedDishButton" stylesheets="@../style/baked_dish_format.css">
                      <graphic>
                         <ImageView fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -126,7 +127,11 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
               </rowConstraints>
             </GridPane>
-            <TextFlow fx:id="recipeField" layoutX="433.0" layoutY="21.0" prefHeight="877.0" prefWidth="722.0" />
+            <ScrollPane layoutX="440.0" layoutY="21.0">
+               <content>
+                  <TextFlow fx:id="recipeField" prefHeight="869.0" prefWidth="705.0" />
+               </content>
+            </ScrollPane>
          </children>
       </AnchorPane>
    </children>
