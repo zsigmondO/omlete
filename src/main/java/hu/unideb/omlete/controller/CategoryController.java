@@ -43,6 +43,8 @@ public class CategoryController {
             Image image = new Image(url.toString());
             ImageView imageView = new ImageView(image);
 
+            Tooltip.install(imageView, new Tooltip(food.getName()));
+
             imageView.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
                 recipeField.getChildren().clear();
                 Text t1 = new Text(food.getRecipe());
