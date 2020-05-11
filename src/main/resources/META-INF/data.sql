@@ -13,3 +13,11 @@ INSERT INTO Food (id, name, image, recipe, category_id) VALUES (2,'olaszos szosz
 INSERT INTO Food (id, name, image, recipe, category_id) VALUES (3,'sult marhaszelet vorosboros gombaraguval','sult_marhaszelet_vorosboros_gombaraguval_2.jpg', '/beef/sult_marhaszelet_vorosboros_gombaraguval_szoveg_2.txt', 2);
 INSERT INTO Food (id, name, image, recipe, category_id) VALUES (5,'pacolt csirkemellfile baconben sutve','pacolt_csirkemellfile_baconben_sutve_3.jpg', '/chicken/pacolt_csirkemellfile_baconben_sutve_szoveg_3.txt', 3);
 INSERT INTO Food (id, name, image, recipe, category_id) VALUES (6,'mexikoi csipos tortilla leves','mexikoi_csipos_tortilla_leves_4.jpg', '/dinner/mexikoi_csipos tortilla_leves_szoveg_4.txt', 4);
+INSERT INTO Food (id, name, image, recipe, category_id) VALUES (7,'brokkoli kremleves','brokkoli_kremleves_9.jpg', '/vegetables/brokkoli_kremleves_szoveg_9.txt', 9);
+INSERT INTO Food (id, name, image, recipe, category_id) VALUES (8,'sargarepa salata','sargarepa_salata_9.jpg', '/vegetables/sargarepa_salata_szoveg_9.txt', 9);
+INSERT INTO Food (id, name, image, recipe, category_id) VALUES (9,'zoldborso fozelek','zoldborso_fozelek_9.jpg', '/vegetables/zoldborso_fozelek_szoveg_9.txt', 9);
+INSERT INTO Food (id, name, image, recipe, category_id) VALUES (10,'madartej szoveg','madartej_8.jpg', '/quick/madartej_szoveg_8.txt', 8);
+INSERT INTO Food (id, name, image, recipe, category_id) VALUES (11,'sajtos tejfolos langos','sajtos_tejfolos_langos_8.jpg', '/quick/sajtos_tejfolos_langos_szoveg_8.txt', 8);
+INSERT INTO Food (id, name, image, recipe, category_id) VALUES (12,'rantott sajt golyok','rantott_sajt_golyok_7.jpg', '/kid_friendly/rantott_sajt_golyok_szoveg_7.txt', 7);
+INSERT INTO Food (id, name, image, recipe, category_id) VALUES (13,'gyumolcs salata szoveg','gyumolcs_salata_6.jpg', '/healthy/gyumolcs_salata_szoveg_6.txt', 6);
+INSERT INTO Food (id, name, image, recipe, category_id) VALUES (14,'marokkoi bab','marokkoi_bab_9.jpg', '/vegetables/marokkoi_bab_szoveg_9.txt', 9);
